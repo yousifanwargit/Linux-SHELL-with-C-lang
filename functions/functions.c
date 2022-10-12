@@ -9,6 +9,12 @@ localvarobj_t all_local_var_arr[100];	/* Array of struct has 100 element which i
 int count;			/* global var which contains the number of local var in the "all_local_var_arr". */
 
 /*============================= Start of Functions Definitions ================================*/
+/**
+ * @description This function will parse the input command from user to an array of strings.
+ * @param str -> char*
+ * @return void
+ * @complexity : O(n)
+ */
 void parseString(char *str)
 {
     int j = 0;
@@ -24,7 +30,13 @@ void parseString(char *str)
     arrayofstrsize = j;
 }
 
-
+/**
+ * @description This function check if the string has equal or not 
+ *              and if it has equal it well be considerd as local var.
+ * @param str -> char*
+ * @return void
+ * @complexity : O(n)
+ */
 int is_string_has_equal(char *str)
 {
     i = 0;
@@ -37,6 +49,14 @@ int is_string_has_equal(char *str)
     return 0;
 }
 
+/**
+ * @description This function check if the string has a special char or not 
+ *              and if it has special char it well do a specific command (<,>,2>,|).
+ * @param str -> char*
+ * @param string -> char* "array of strings"
+ * @return int -> it will return if the this string contains this special char or symbol or not.
+ * @complexity : O(1)
+ */
 int search_in_string_with_specific_symbol(char *str, char **string)
 {
     int flag = 0;
@@ -54,6 +74,12 @@ int search_in_string_with_specific_symbol(char *str, char **string)
     }
 }
 
+/**
+ * @description This function used to set a local var in an global array contains 100 local var only.
+ * @param str -> char*
+ * @return void.
+ * @complexity : O(1)
+ */
 void SetLocalVar(char *str)
 {
     int len = strlen(command_parsed_holder[0]);
@@ -69,6 +95,12 @@ void SetLocalVar(char *str)
     count++;
 }
 
+/**
+ * @description This function used to list all local var wich stored in the global array.
+ * @param void.
+ * @return coid.
+ * @complexity : O(1)
+ */
 void ListAllLocalVar(void)
 {
     for (int i = 0; i < count; i++) {
@@ -78,6 +110,13 @@ void ListAllLocalVar(void)
     }
 }
 
+/**
+ * @description This function used to search for a local var 
+ *              when the user want to add this var to the env variables.
+ * @param void.
+ * @return int -> will return the position of this var in the array and in fail will return -1.
+ * @complexity : O(1)
+ */
 int SearchForLcalVar(void)
 {
     for (int i = 0; i < count; i++) {
@@ -89,12 +128,24 @@ int SearchForLcalVar(void)
     return -1;
 }
 
+/**
+ * @description This function used to remove an env var.
+ * @param var -> the name of this var.
+ * @return int -> the status of this sys call (unsetenv).
+ * @complexity : O(1)
+ */
 int RemoveEnvVar(char *var)
 {
     int x = unsetenv(var);
     return x;
 }
 
+/**
+ * @description This function used to list all info about this shell and its features till now.
+ * @param void.
+ * @return void.
+ * @complexity : O(1)
+ */
 void help(void)
 {
 
