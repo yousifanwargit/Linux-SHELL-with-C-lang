@@ -1,1 +1,34 @@
-will be updated soon
+/***************************************************
+*                     README                       *
+****************************************************/
+
+STEPS TO INSTALL:
+    1) after downloading the project.
+    2) go to build directory.
+    3) execute the make file by "make"
+    4) then you will run the program myshell by this command "./myshell"
+
+
+THE FEATURES TILL NOW:
+    -you can set a local var upto 100 local var.
+    -you can also set a multiple local var in one line.
+    -you can set an env var by using "export local_varname" built in command.
+    -you can remove an env var by using "unset local_varname" built in command.
+    -you can list all local vars by using "set" built in command.
+    t-you can list all env vars by using "env" command.
+    -you can navigate in your system by using "cd" built in command and also your path is changed in the prompt.
+    -"cd /" to go to the root dir.
+    -"cd ~" to go to the home dir.
+    -"cd .." to go to the parent dir.
+    -"cd Path" to go to any path (relative or absolute).
+    -you can use redirection (<,>,2>) after redirect symbol must be a one file with no flags
+         and also before the redirect symbol you can do a command with one, two or three words. 
+         ex:(ls -l dir_name > file_name)(ls -l > file_name),(ls > file_name)
+    -you can also use piping (|),before the symbol you can write a command with one, two or three words.
+         and after the symbol you can write one or two words.
+         ex:(ls -l dir_name | grep Y), (ls -l | grep Y),(ls | grep Y),(cat file_name | less).
+    -use "exit" built in command to exit from the SHELL.
+    
+    AUTHOR:Yousif Mohamed Anwar.
+    Linkedin: "https://www.linkedin.com/in/yousif-anwar/"
+    Github: "https://github.com/yousifanwargit" 

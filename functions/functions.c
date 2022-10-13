@@ -89,7 +89,7 @@ void SetLocalVar(char *str)
 	all_local_var_arr[count].key[n] = str[n];
     }
 
-    for (int n = z + 1; n < len; n++) {
+    for (int n = z + 1; n <= len+2; n++) {
 	all_local_var_arr[count].value[n - z - 1] = str[n];
     }
     count++;
@@ -159,7 +159,7 @@ void help(void)
             "\n\n\t-you can remove an env var by using \"unset local_varname\" built in command."
             "\n\n\t-you can list all local vars by using \"set\" built in command."
             "\n\n\t-you can list all env vars by using \"env\" command."
-            "\n\n\t-you can navigate in your system by using \"cd\" built in command."
+            "\n\n\t-you can navigate in your system by using \"cd\" built in command and also your path is changed in the prompt."
             "\n\t\t-\"cd /\" to go to the root dir."
             "\n\t\t-\"cd ~\" to go to the home dir."
             "\n\t\t-\"cd ..\" to go to the parent dir."
