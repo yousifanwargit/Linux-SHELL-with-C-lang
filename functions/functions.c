@@ -163,7 +163,14 @@ void help(void)
             "\n\t\t-\"cd /\" to go to the root dir."
             "\n\t\t-\"cd ~\" to go to the home dir."
             "\n\t\t-\"cd ..\" to go to the parent dir."
-            "\n\t\t-\"cd Path\" to go to any path (relative or absolute).");
+            "\n\t\t-\"cd Path\" to go to any path (relative or absolute)."
+            "\n\n\t-you can use redirection (<,>,2>) after redirect symbol must be a one file with no flags"
+            "\n\t and also before the redirect symbol you can do a command with one, two or three words." 
+            "\n\t\tex:(ls -l dir_name > file_name)(ls -l > file_name),(ls > file_name)"
+            "\n\n\t-you can also use piping (|),before the symbol you can write a command with one, two or three words."
+            "\n\t and after the symbol you can write one or two words."
+            "\n\t\tex:(ls -l dir_name | grep Y), (ls -l | grep Y),(ls | grep Y),(cat file_name | less)."
+            "\n\n\t-use \"exit\" built in command to exit from the SHELL.");
 
     printf("\n\n\n******************" 
         "************************\n\n");

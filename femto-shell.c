@@ -1,5 +1,3 @@
-
-
 /*
 db      d888888b d8b   db db    db db    db 
 88        `88'   888o  88 88    88 `8b  d8' 
@@ -76,7 +74,6 @@ int main(int argc, char *argv[])
 	if (flag == 1) {
 	    /* parse and set a local var */
 	    SetLocalVar(command_parsed_holder[0]);
-		printf("%d\n",arrayofstrsize);
 		for(int i=1; i<arrayofstrsize;i++){
 			flag = is_string_has_equal(command_parsed_holder[i]);
 			if(flag == 1){
@@ -117,6 +114,17 @@ int main(int argc, char *argv[])
 		    printf("(%s) is removed from env variables.\n",command_parsed_holder[1]);
 		}
 			continue;
+	    }
+/*============================== exit from the shell by using "exit" built in command ================================*/
+		else if (!(strcmp(command_parsed_holder[0], "exit"))) {
+			printf(".########..##....##.########\n"
+				   ".##.....##..##..##..##......\n"
+				   ".##.....##...####...##......\n"
+				   ".########.....##....######..\n"
+				   ".##.....##....##....##......\n"
+				   ".##.....##....##....##......\n"
+				   ".########.....##....########\n");
+			break;
 	    }
 /*================= DISPLAY A MANUAL PAGE CALLED HELP BY USING "help" BUILT IN COMMAND =================*/
 	    else if (!(strcmp(command_parsed_holder[0], "help"))) {
@@ -245,19 +253,13 @@ int main(int argc, char *argv[])
 				}
 
 				if (flag == 1) {
-					execlp(command_parsed_holder[0],
-					command_parsed_holder[0], NULL);
+					execlp(command_parsed_holder[0],command_parsed_holder[0], NULL);
 				} 
 				else if (flag == 2) {
-					execlp(command_parsed_holder[0],
-					command_parsed_holder[0],
-					command_parsed_holder[1], NULL);
+					execlp(command_parsed_holder[0],command_parsed_holder[0],command_parsed_holder[1], NULL);
 				} 
 				else if (flag == 3) {
-					execlp(command_parsed_holder[0],
-					command_parsed_holder[0],
-					command_parsed_holder[1],
-					command_parsed_holder[2], NULL);
+					execlp(command_parsed_holder[0],command_parsed_holder[0],command_parsed_holder[1],command_parsed_holder[2], NULL);
 				}
 
 		    }
