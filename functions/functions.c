@@ -152,8 +152,9 @@ void help(void)
     printf("\n\n\n\n******************" 
         "************************\n\n");
 
-    printf("\nin this SHELL you can do:\n\t-run any command you want but only in foreground."
+    printf("\nin this SHELL you can do:\n\t-run any command you want in foreground or background."
             "\n\n\t-you can set a local var upto 100 local var."
+            "\n\n\t-you can also set a multiple local var in one line."
             "\n\n\t-you can set an env var by using \"export local_varname\" built in command."
             "\n\n\t-you can remove an env var by using \"unset local_varname\" built in command."
             "\n\n\t-you can list all local vars by using \"set\" built in command."

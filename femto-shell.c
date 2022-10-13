@@ -1,8 +1,35 @@
 
+
+/*
+db      d888888b d8b   db db    db db    db 
+88        `88'   888o  88 88    88 `8b  d8' 
+88         88    88V8o 88 88    88  `8bd8'  
+88         88    88 V8o88 88    88  .dPYb.  
+88booo.   .88.   88  V888 88b  d88 .8P  Y8. 
+Y88888P Y888888P VP   V8P ~Y8888P' YP    YP 
+                                            
+                                            
+.d8888. db    db d8888b. d88888b d8888b. 
+88'  YP 88    88 88  `8D 88'     88  `8D 
+`8bo.   88    88 88oodD' 88ooooo 88oobY' 
+  `Y8b. 88    88 88~~~   88~~~~~ 88`8b   
+db   8D 88b  d88 88      88.     88 `88. 
+`8888Y' ~Y8888P' 88      Y88888P 88   YD 
+                                         
+                                         
+d8888b. db    db d8b   db d8b   db d88888b d8888b. .d8888. 
+88  `8D 88    88 888o  88 888o  88 88'     88  `8D 88'  YP 
+88oobY' 88    88 88V8o 88 88V8o 88 88ooooo 88oobY' `8bo.   
+88`8b   88    88 88 V8o88 88 V8o88 88~~~~~ 88`8b     `Y8b. 
+88 `88. 88b  d88 88  V888 88  V888 88.     88 `88. db   8D 
+88   YD ~Y8888P' VP   V8P VP   V8P Y88888P 88   YD `8888Y' 
+*/
+
 #include "includes.h"
 #include "myshellconfig.h"
 #include "functions/functions.h"
 #define _GNU_SOURCE		/* See feature_test_macros(7) */
+
 
 /*====================================== GLOBAL VARIABLES ==========================================*/
 extern int i;			/* this var contains the position of the "=" in the parsed array. */
@@ -49,6 +76,13 @@ int main(int argc, char *argv[])
 	if (flag == 1) {
 	    /* parse and set a local var */
 	    SetLocalVar(command_parsed_holder[0]);
+		printf("%d\n",arrayofstrsize);
+		for(int i=1; i<arrayofstrsize;i++){
+			flag = is_string_has_equal(command_parsed_holder[i]);
+			if(flag == 1){
+				SetLocalVar(command_parsed_holder[i]);
+			}
+		}
 	    continue;
 	} 
 	else {
