@@ -170,7 +170,10 @@ void help(void)
             "\n\n\t-you can also use piping (|),before the symbol you can write a command with one, two or three words."
             "\n\t and after the symbol you can write one or two words."
             "\n\t\tex:(ls -l dir_name | grep Y), (ls -l | grep Y),(ls | grep Y),(cat file_name | less)."
-            "\n\n\t-use \"exit\" built in command to exit from the SHELL.");
+            "\n\n\t-use \"exit\" built in command to exit from the SHELL."
+            "\n\n\nAUTHOR:Yousif Mohamed Anwar."
+            "\nLinkedin: https://www.linkedin.com/in/yousif-anwar/ "
+            "\nGithub: https://github.com/yousifanwargit ");
 
     printf("\n\n\n******************" 
         "************************\n\n");
