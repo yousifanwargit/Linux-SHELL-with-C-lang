@@ -275,6 +275,7 @@ int main(int argc, char *argv[])
 /* =========================exec and replace the current process with specific program.===========================*/
 		    execvp(command_parsed_holder[0],command_parsed_holder);
 		    printf("execve failed.\n");
+			return -1;
 		}
 	    }
 	}
